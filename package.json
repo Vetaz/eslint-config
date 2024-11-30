@@ -1,6 +1,6 @@
 {
   "name": "eslint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "defaultConfig.js",
   "types": "defaultConfig.d.ts",
   "author": "Jordi Kloosterboer",
@@ -12,11 +12,13 @@
   "peerDependencies": {
     "eslint": ">=9"
   },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.16.0",
-    "@types/node": "^20.17.9",
     "globals": "^15.12.0",
-    "typescript": "^5.7.2",
     "typescript-eslint": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "typescript": "^5.7.2"
   }
 }
