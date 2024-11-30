@@ -1,5 +1,5 @@
 // @ts-check
-export { default } from './defaultConfig.ts'
+export { default } from './defaultConfig'
 
 /**
  * OR if wanting to add additional logic with TS's help

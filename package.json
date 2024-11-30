@@ -1,7 +1,8 @@
 {
   "name": "eslint-config",
-  "version": "1.0.0",
-  "main": "defaultConfig.ts",
+  "version": "1.1.0",
+  "main": "defaultConfig.js",
+  "types": "defaultConfig.d.ts",
   "author": "Jordi Kloosterboer",
   "type": "module",
   "license": "ISC",
@@ -9,7 +10,7 @@
     "node": ">=20"
   },
   "peerDependencies": {
-    "eslint": "^9.16.0"
+    "eslint": ">=9"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",

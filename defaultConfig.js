@@ -1,3 +1,4 @@
+// @ts-check
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tsEslint from 'typescript-eslint'
@@ -31,6 +32,7 @@ export default tsEslint.config(
         },
       ],
       '@typescript-eslint/no-deprecated': 'warn',
+      '@typescript-eslint/prefer-promise-reject-errors': 'off',
     },
   }
 )
