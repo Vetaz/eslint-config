@@ -1,6 +1,6 @@
 {
   "name": "eslint-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "defaultConfig.js",
   "types": "defaultConfig.d.ts",
   "author": "Jordi Kloosterboer",

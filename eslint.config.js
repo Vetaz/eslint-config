@@ -1,15 +1,14 @@
 // @ts-check
-export { default } from './defaultConfig'
 
-/**
- * OR if wanting to add additional logic with TS's help
- *
- * import defaultConfig from './defaultConfig.ts'
- * import tsEslint from 'typescript-eslint'
- *
- * export default tsEslint.config(...defaultConfig)
- *
- * OR without TS's help
- *
- * export default [...defaultConfig]
- */
+// option 1
+// export { default } from './defaultConfig'
+
+// option 2
+import defaultConfig from './defaultConfig'
+import tsEslint from 'typescript-eslint'
+
+export default tsEslint.config(...defaultConfig)
+
+// option 3
+// import defaultConfig from './defaultConfig'
+// export default [...defaultConfig]

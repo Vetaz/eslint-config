@@ -1,3 +1,5 @@
 import tsEslint from 'typescript-eslint'
 
-export default tsEslint.config
+declare const config: ReturnType<typeof tsEslint.config>
+
+export default config
