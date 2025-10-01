@@ -1,14 +1,4 @@
-// @ts-check
-
-// option 1
-// export { default } from './defaultConfig'
-
-// option 2
 import defaultConfig from './defaultConfig'
-import tsEslint from 'typescript-eslint'
+import { defineConfig } from 'eslint/config'
 
-export default tsEslint.config(...defaultConfig)
-
-// option 3
-// import defaultConfig from './defaultConfig'
-// export default [...defaultConfig]
+export default defineConfig(defaultConfig)

@@ -1,9 +1,16 @@
-// @ts-check
 import globals from 'globals'
 import pluginJs from '@eslint/js'
+import { defineConfig } from 'eslint/config'
 import tsEslint from 'typescript-eslint'
 
-export default tsEslint.config(
+/** Allow to use .mts/.ts config in VSCode's extension */
+// "eslint.runtime": "node",
+// "eslint.options": {
+//   "flags": ["unstable_native_nodejs_ts_config"]
+// },
+// "eslint.execArgv": ["--experimental-strip-types"]
+// Or use jiti
+export default defineConfig(
   { files: ['**/*.{js,mjs,cjs,ts}'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.jquery, google: 'readonly' } } },
   pluginJs.configs.recommended,
