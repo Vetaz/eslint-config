@@ -11,11 +11,11 @@ import tsEslint from 'typescript-eslint'
 // "eslint.execArgv": ["--experimental-strip-types"]
 // Or use jiti
 export default defineConfig(
-  { files: ['**/*.{js?(x),mjs,cjs,ts?(x)}'] },
+  { files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.jquery, google: 'readonly' } } },
   pluginJs.configs.recommended,
   {
-    files: ['**/*.ts?(x)'],
+    files: ['**/*.ts?(x)', '**/*.mts'],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -25,6 +25,7 @@ export default defineConfig(
     extends: [tsEslint.configs.strictTypeChecked, tsEslint.configs.stylisticTypeChecked],
     rules: {
       '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
+      '@typescript-eslint/consistent-type-definitions': ['off', 'types'],
       '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',
