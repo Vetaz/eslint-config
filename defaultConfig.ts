@@ -11,11 +11,11 @@ import tsEslint from 'typescript-eslint'
 // "eslint.execArgv": ["--experimental-strip-types"]
 // Or use jiti
 export default defineConfig(
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
+  { files: ['**/*.{js?(x),mjs,cjs,ts?(x)}'] },
   { languageOptions: { globals: { ...globals.browser, ...globals.jquery, google: 'readonly' } } },
   pluginJs.configs.recommended,
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts?(x)'],
     languageOptions: {
       parserOptions: {
         projectService: true,
