@@ -30,7 +30,6 @@ const typescript = defineConfig({
   extends: [tsEslint.configs.strictTypeChecked, tsEslint.configs.stylisticTypeChecked],
   rules: {
     '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/no-unused-vars': [
       'error',
