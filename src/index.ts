@@ -32,6 +32,7 @@ const typescript = defineConfig({
     '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: 'only-allowed-literals' }],
+    '@typescript-eslint/no-unnecessary-type-parameters': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
