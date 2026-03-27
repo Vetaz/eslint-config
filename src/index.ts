@@ -9,13 +9,12 @@ const pluginJsConfig = defineConfig(
     files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'],
     ...pluginJs.configs.recommended,
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access -- it is from a js package
   comments.recommended,
   {
     rules: {
       '@eslint-community/eslint-comments/require-description': 'error',
     },
-  }
+  },
 )
 
 const globalSetup = defineConfig({

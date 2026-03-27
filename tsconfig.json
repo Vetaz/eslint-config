@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": "src",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "strict": true,
     "declaration": true,
-    "allowJs": true,
-    "noImplicitAny": false
+    "allowJs": true
+    // "noImplicitAny": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
