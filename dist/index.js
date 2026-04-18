@@ -3,14 +3,7 @@ import pluginJs from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import tsEslint from 'typescript-eslint';
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
-const pluginJsConfig = defineConfig({
-    files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'],
-    ...pluginJs.configs.recommended,
-}, comments.recommended, {
-    rules: {
-        '@eslint-community/eslint-comments/require-description': 'error',
-    },
-});
+const pluginJsConfig = defineConfig({ files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'], ...pluginJs.configs.recommended }, comments.recommended, { rules: { '@eslint-community/eslint-comments/require-description': 'error' } });
 const globalSetup = defineConfig({
     files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'],
     name: 'Jordi/TypeScript/globals-setup',
@@ -27,6 +20,7 @@ const typescript = defineConfig({
         '@typescript-eslint/explicit-function-return-type': 'error',
         '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: 'only-allowed-literals' }],
         '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'error',
         '@typescript-eslint/no-unused-vars': [
             'error',
             {
@@ -43,10 +37,7 @@ const typescript = defineConfig({
         '@typescript-eslint/prefer-promise-reject-errors': 'off',
     },
 });
-const disableTypeChecking = (files) => defineConfig({
-    files,
-    extends: [tsEslint.configs.disableTypeChecked],
-});
+const disableTypeChecking = (files) => defineConfig({ files, extends: [tsEslint.configs.disableTypeChecked] });
 export const configs = {
     all: defineConfig(pluginJsConfig, globalSetup, typescript),
     pluginJs: pluginJsConfig,

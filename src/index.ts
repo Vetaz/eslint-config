@@ -5,16 +5,9 @@ import tsEslint from 'typescript-eslint'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 
 const pluginJsConfig = defineConfig(
-  {
-    files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'],
-    ...pluginJs.configs.recommended,
-  },
+  { files: ['**/*.{js?(x),m(j|t)s,cjs,ts?(x)}'], ...pluginJs.configs.recommended },
   comments.recommended,
-  {
-    rules: {
-      '@eslint-community/eslint-comments/require-description': 'error',
-    },
-  },
+  { rules: { '@eslint-community/eslint-comments/require-description': 'error' } },
 )
 
 const globalSetup = defineConfig({
@@ -34,6 +27,7 @@ const typescript = defineConfig({
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: 'only-allowed-literals' }],
     '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -52,10 +46,7 @@ const typescript = defineConfig({
 })
 
 const disableTypeChecking = (files: string[]): ReturnType<typeof defineConfig> =>
-  defineConfig({
-    files,
-    extends: [tsEslint.configs.disableTypeChecked],
-  })
+  defineConfig({ files, extends: [tsEslint.configs.disableTypeChecked] })
 
 export const configs = {
   all: defineConfig(pluginJsConfig, globalSetup, typescript),
